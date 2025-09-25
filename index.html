@@ -27,120 +27,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>El Gouna Squash</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>El Gouna Squash — Pricing</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
+    :root{
+      --blue:#007bff;
+      --blue-dark:#0056b3;
+      --bg:#f8f9fa;
+      --card:#f1f1f1;
+    }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:#222;
     }
 
-    /* Navigation bar */
-    .navbar {
-      background: #007bff;
-      display: flex;
-      justify-content: center;
+    /* Navbar */
+    .navbar{
+      background:var(--blue);
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      padding:10px;
+      flex-wrap:wrap;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     }
 
-    .navbar a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      text-align: center;
-      display: block;
+    /* Dropdown wrapper */
+    .dropdown{
+      position:relative;
     }
 
-    .navbar a:hover {
-      background: #0056b3;
+    /* Button that opens dropdown */
+    .dropbtn{
+      background:none;
+      border:none;
+      color:#fff;
+      padding:10px 14px;
+      font-size:16px;
+      cursor:pointer;
+      border-radius:6px;
+    }
+    .dropbtn:hover,
+    .dropbtn:focus{
+      background:var(--blue-dark);
+      outline:none;
     }
 
-    /* Dropdown container */
-    .dropdown {
-      position: relative;
-      display: inline-block;
+    /* Dropdown content */
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:calc(100% + 8px);
+      left:0;
+      background:#fff;
+      min-width:260px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-radius:8px;
+      padding:10px;
+      z-index:50;
     }
 
-    /* Dropdown content (hidden by default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      min-width: 240px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      padding: 10px;
-      z-index: 1;
+    .dropdown-content.show{
+      display:block;
+      animation:fadeIn .12s ease;
+    }
+    @keyframes fadeIn{from{opacity:0; transform:translateY(-4px)} to{opacity:1; transform:none}}
+
+    /* Grid of price items: always two columns on desktop, one on small screens */
+    .price-grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+    }
+    @media (max-width:480px){
+      .price-grid{ grid-template-columns: 1fr; }
     }
 
-    /* Grid for prices (forces 2 columns) */
-    .price-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+    .price-item{
+      background:var(--card);
+      padding:12px;
+      border-radius:6px;
+      text-align:center;
+      font-size:14px;
+      line-height:1.2;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     }
 
-    .price-item {
-      background: #f1f1f1;
-      padding: 10px;
-      border-radius: 5px;
-      text-align: center;
-      font-size: 14px;
+    /* Page header */
+    .header{
+      text-align:center;
+      padding:36px 18px;
     }
+    .header h1{ margin:0 0 8px; color:var(--blue) }
+    .header p{ margin:0; color:#444 }
 
-    /* Show dropdown on click */
-    .show {
-      display: block;
-    }
+    /* small helper */
+    .hint{ font-size:13px; color:#666; margin-top:10px }
   </style>
 </head>
 <body>
 
-  <!-- Navigation bar -->
-  <div class="navbar">
+  <div class="navbar" role="navigation" aria-label="Main menu">
     <div class="dropdown">
-      <a href="#" onclick="toggleDropdown(event, 'level1')">Level 1</a>
-      <div class="dropdown-content" id="level1">
+      <button class="dropbtn" data-target="level1" aria-expanded="false">Level 1 ▾</button>
+      <div class="dropdown-content" id="level1" aria-hidden="true">
         <div class="price-grid">
-          <div class="price-item">1 per week<br><b>1000 LE</b></div>
-          <div class="price-item">2 per week<br><b>1350 LE</b></div>
+          <div class="price-item"><div>1 per week</div><div style="font-weight:700; margin-top:6px">1000 LE</div></div>
+          <div class="price-item"><div>2 per week</div><div style="font-weight:700; margin-top:6px">1350 LE</div></div>
         </div>
       </div>
     </div>
 
     <div class="dropdown">
-      <a href="#">Level 2</a>
+      <button class="dropbtn" data-target="level2" aria-expanded="false">Level 2 ▾</button>
+      <div class="dropdown-content" id="level2" aria-hidden="true">
+        <div class="price-grid">
+          <div class="price-item">1 per week<br><strong>1200 LE</strong></div>
+          <div class="price-item">2 per week<br><strong>1550 LE</strong></div>
+        </div>
+      </div>
     </div>
+
     <div class="dropdown">
-      <a href="#">Level 3</a>
+      <button class="dropbtn" data-target="level3" aria-expanded="false">Level 3 ▾</button>
+      <div class="dropdown-content" id="level3" aria-hidden="true">
+        <div class="price-grid">
+          <div class="price-item">1 per week<br><strong>1400 LE</strong></div>
+          <div class="price-item">2 per week<br><strong>1750 LE</strong></div>
+        </div>
+      </div>
     </div>
+
     <div class="dropdown">
-      <a href="#">Level 4</a>
+      <button class="dropbtn" data-target="level4" aria-expanded="false">Level 4 ▾</button>
+      <div class="dropdown-content" id="level4" aria-hidden="true">
+        <div class="price-grid">
+          <div class="price-item">1 per week<br><strong>1600 LE</strong></div>
+          <div class="price-item">2 per week<br><strong>1900 LE</strong></div>
+        </div>
+      </div>
     </div>
+
     <div class="dropdown">
-      <a href="#">Level 5</a>
+      <button class="dropbtn" data-target="level5" aria-expanded="false">Level 5 ▾</button>
+      <div class="dropdown-content" id="level5" aria-hidden="true">
+        <div class="price-grid">
+          <div class="price-item">1 per week<br><strong>1800 LE</strong></div>
+          <div class="price-item">2 per week<br><strong>2100 LE</strong></div>
+        </div>
+      </div>
     </div>
   </div>
 
+  <div class="header">
+    <h1>El Gouna Squash</h1>
+    <p>Click a Level button to view prices (two-column layout)</p>
+    <div class="hint">Click outside a dropdown to close it. Press Esc to close all.</div>
+  </div>
+
   <script>
-    // Toggle dropdown on click
-    function toggleDropdown(event, id) {
-      event.preventDefault();
-      document.getElementById(id).classList.toggle("show");
-    }
+    // Toggle dropdowns via button (works reliably)
+    document.addEventListener('click', function(e){
+      const btn = e.target.closest('.dropbtn');
+      if (btn){
+        // which dropdown to open
+        const targetId = btn.dataset.target;
+        const panel = document.getElementById(targetId);
+        if (!panel) return;
 
-    // Close dropdown if clicked outside
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropdown a')) {
-        let dropdowns = document.getElementsByClassName("dropdown-content");
-        for (let i = 0; i < dropdowns.length; i++) {
-          dropdowns[i].classList.remove("show");
+        // close other open panels
+        document.querySelectorAll('.dropdown-content.show').forEach(function(p){
+          if (p !== panel){ p.classList.remove('show'); p.setAttribute('aria-hidden','true'); }
+        });
+
+        // toggle this one
+        const willShow = !panel.classList.contains('show');
+        if (willShow){
+          panel.classList.add('show');
+          panel.setAttribute('aria-hidden','false');
+          btn.setAttribute('aria-expanded','true');
+        } else {
+          panel.classList.remove('show');
+          panel.setAttribute('aria-hidden','true');
+          btn.setAttribute('aria-expanded','false');
         }
+        return;
       }
-    }
-  </script>
 
+      // if click is outside any dropdown, close all
+      if (!e.target.closest('.dropdown')){
+        document.querySelectorAll('.dropdown-content.show').forEach(function(p){
+          p.classList.remove('show'); p.setAttribute('aria-hidden','true');
+        });
+        document.querySelectorAll('.dropbtn').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      }
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){
+        document.querySelectorAll('.dropdown-content.show').forEach(function(p){
+          p.classList.remove('show'); p.setAttribute('aria-hidden','true');
+        });
+        document.querySelectorAll('.dropbtn').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      }
+    });
+  </script>
 </body>
 </html>
