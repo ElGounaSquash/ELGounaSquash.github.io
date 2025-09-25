@@ -23,3 +23,120 @@
   <p>This is our official website hosted on GitHub Pages.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>El Gouna Squash</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      background: #007bff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+    }
+
+    .navbar a:hover {
+      background: #0056b3;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 220px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 1;
+    }
+
+    /* Grid for prices */
+    .price-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .price-item {
+      background: #f1f1f1;
+      padding: 8px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    /* Show dropdown on click */
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <div class="dropdown">
+      <a href="#" onclick="toggleDropdown(event, 'level1')">Level 1</a>
+      <div class="dropdown-content" id="level1">
+        <div class="price-grid">
+          <div class="price-item">1 per week<br><b>1000 LE</b></div>
+          <div class="price-item">2 per week<br><b>1350 LE</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <a href="#">Level 2</a>
+    </div>
+    <div class="dropdown">
+      <a href="#">Level 3</a>
+    </div>
+    <div class="dropdown">
+      <a href="#">Level 4</a>
+    </div>
+    <div class="dropdown">
+      <a href="#">Level 5</a>
+    </div>
+  </div>
+
+  <script>
+    // Toggle dropdown on click
+    function toggleDropdown(event, id) {
+      event.preventDefault();
+      document.getElementById(id).classList.toggle("show");
+    }
+
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown a')) {
+        let dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].classList.remove("show");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
