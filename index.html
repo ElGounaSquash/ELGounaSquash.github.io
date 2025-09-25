@@ -69,18 +69,18 @@
       background-color: #666;
     }
 
-    /* Table responsiveness */
+    /* Table responsiveness: horizontal scroll on mobile */
     @media screen and (max-width: 600px) {
-      .dropdown-content table, .dropdown-content th, .dropdown-content td {
-        display: block;
-        width: 100%;
-        text-align: right;
+      .dropdown-content {
+        overflow-x: auto;
       }
-      .dropdown-content th {
-        background-color: #222;
+
+      .dropdown-content table {
+        width: 600px; /* table width stays fixed to allow scrolling */
       }
-      .dropdown-content td {
-        border-bottom: 1px solid #333;
+
+      .dropdown-content th, .dropdown-content td {
+        white-space: nowrap; /* prevent text wrapping */
       }
     }
 
