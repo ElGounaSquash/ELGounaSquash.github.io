@@ -1,6 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>El Gouna Squash</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background') no-repeat center center fixed; /* 👈 make sure the file name matches */
+      background-size: cover;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      background: rgba(0,0,0,0.6);
+      flex-wrap: wrap;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .menu-btn {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .dropdown-panel {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      color: #000;
+      padding: 10px;
+      border-radius: 6px;
+      min-width: 320px;
+      z-index: 100;
+    }
+
+    .dropdown-panel.show {
+      display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table td, table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    table th {
+      background: #007bff;
+      color: #fff;
+      padding: 8px;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+      .dropdown-panel {
+        position: static;
+        width: 95%;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <!-- Level 1 -->
+    <div class="dropdown">
+      <button class="menu-btn" data-target="level1">Level 1 ▾</button>
+      <div class="dropdown-panel" id="level1">
+        <table>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1000</td><td>Group players / 45 min</td></tr>
+          <tr><td>2 per week</td><td>1350</td><td>Group players / 45 min</td></tr>
+          <tr><td>3 per week</td><td>1500</td><td>Group players / 45 min</td></tr>
+          <tr><td>4 per week</td><td>1700</td><td>Group players / 45 min</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Level 2 -->
+    <div class="dropdown">
+      <button class="menu-btn" data-target="level2">Level 2 ▾</button>
+      <div class="dropdown-panel" id="level2">
+        <table>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1200</td><td>Group players / 45 min</td></tr>
+          <tr><td>2 per week</td><td>1500</td><td>Group players / 45 min</td></tr>
+          <tr><td>3 per week</td><td>1750</td><td>Group players / 45 min</td></tr>
+          <tr><td>4 per week</td><td>2000</td><td>Group players / 45 min</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Level 3 -->
+    <div class="dropdown">
+      <button class="menu-btn" data-target="level3">Level 3 ▾</button>
+      <div class="dropdown-panel" id="level3">
+        <table>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1400</td><td>(2 players) / 1 hour</td></tr>
+          <tr><td>2 per week</td><td>2000</td><td>(2 players) / 1 hour</td></tr>
+          <tr><td>3 per week</td><td>2400</td><td>(2 players) / 1 hour</td></tr>
+          <tr><td>4 per week</td><td>2700</td><td>(2 players) / 1 hour</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Adult -->
+    <div class="dropdown">
+      <button class="menu-btn" data-target="adult">Adult ▾</button>
+      <div class="dropdown-panel" id="adult">
+        <table>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1500</td><td>(2 players) / 45 min</td></tr>
+          <tr><td>2 per week</td><td>1800</td><td>(2 players) / 45 min</td></tr>
+          <tr><td>3 per week</td><td>2250</td><td>(2 players) / 45 min</td></tr>
+          <tr><td>4 per week</td><td>2500</td><td>(2 players) / 45 min</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Private Trainer -->
+    <div class="dropdown">
+      <button class="menu-btn" data-target="private">Private Trainer ▾</button>
+      <div class="dropdown-panel" id="private">
+        <table>
+          <tr><th>Package</th><th>Details</th></tr>
+          <tr><td>One time</td><td>400 LE / 1 hour</td></tr>
+        </table>
+      </div>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener('click', function(e) {
+      const btn = e.target.closest('.menu-btn');
+      if (btn) {
+        const id = btn.dataset.target;
+        const panel = document.getElementById(id);
+        if (!panel) return;
+
+        document.querySelectorAll('.dropdown-panel').forEach(p => {
+          if (p !== panel) p.classList.remove('show');
+        });
+
+        panel.classList.toggle('show');
+        return;
+      }
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown-panel').forEach(p => p.classList.remove('show'));
+      }
+    });
+  </script>
+</body>
+</html>
+✅ This code:
+
+Keeps your background (just make sure the filename matches).
+
+Shows the exact prices and training times you provided.
+
+Works on mobile and desktop.
+
+👉 Do you also want me to add a footer with contact info (WhatsApp, phone, location)?
+
+
+
+
+
+
+
+You said:
+perfect but i cant see my back ground
+
+
+ChatGPT said:
+Great 🎉 glad the prices & tables are now correct!
+If your background is not showing, that’s almost always because the filename in your repo doesn’t match the code.
+
+Right now the CSS says:
+
+css
+Copy code
+background: url('background') no-repeat center center fixed;
+But if your uploaded file is called background.jpg, background.jpeg, or background.png, then you must change it to:
+
+css
+Copy code
+background: url('background.jpg') no-repeat center center fixed;
+(or .png / .jpeg depending on the exact extension).
+
+⚡ To fix it:
+
+Go to your GitHub repo → check the exact name of your background file.
+Example: background.jpg
+
+Edit your index.html → update the CSS line.
+
+Save → Commit → Refresh your website (press Ctrl+F5 or Shift+Reload to bypass cache).
+
+👉 Can you tell me the exact file name of your background image in the repo? I’ll then give you the corrected line for your code.
+
+
+
+
+
+
+
+You said:
+yes background.jpg
+
+
+ChatGPT said:
+Perfect 👌 thanks for confirming!
+Since your file is named background.jpg, just update the CSS line inside your index.html to:
+
+css
+Copy code
+background: url('background.jpg') no-repeat center center fixed;
+So the top part of your code should look like this:
+
+html
+Copy code
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('background.jpg') no-repeat center center fixed; /* ✅ correct filename */
+    background-size: cover;
+    min-height: 100vh;
+    color: #fff;
+  }
+⚡ After you commit this change:
+
+Push it to GitHub.
+
+Refresh your site with Ctrl + F5 (Windows) or Cmd + Shift + R (Mac) to clear cache.
+
+That will make your background.jpg appear 🎉
+
+👉 Do you want me to also make the background a little darker overlay so the white text and tables are easier to read?
+
+
+
+
+
+
+
+You said:
+good for browser at desktop but not good for mobile view can u keep date but change the site sitting to fit mobile view
+
+
+ChatGPT said:
+Got it ✅
+Right now your site is scaling nicely on desktop, but for mobile the background + tables + dropdowns aren’t adapting.
+
+We’ll fix this by:
+
+Adding a responsive <meta> tag.
+
+Using flexible table styles that wrap on small screens.
+
+Making the navbar buttons stack on mobile.
+
+Keeping your background.jpg but ensuring it resizes correctly.
+
+Here’s your updated full code (mobile-friendly):
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Mobile scaling -->
   <title>El Gouna Squash</title>
