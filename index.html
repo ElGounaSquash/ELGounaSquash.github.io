@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dropdown Test</title>
+  <title>El Gouna Squash</title>
   <style>
     body {
       margin: 0;
@@ -44,12 +44,33 @@
       color: #000;
       padding: 10px;
       border-radius: 6px;
-      min-width: 200px;
+      min-width: 260px;
       z-index: 100;
     }
 
     .dropdown-panel.show {
       display: block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+
+    th {
+      background: #eee;
+    }
+
+    .highlight {
+      background: #f6c23e;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -57,20 +78,45 @@
   <nav class="navbar">
     <div class="dropdown">
       <button class="menu-btn" data-target="level1">Level 1 ▾</button>
-      <div class="dropdown-panel" id="level1">Test prices for Level 1</div>
+      <div class="dropdown-panel" id="level1">
+        <table>
+          <tr>
+            <th>#</th>
+            <th>Programs</th>
+            <th colspan="4">Training / Week</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><strong>Level 1</strong></td>
+            <td>1 / week<br><strong>1000 LE</strong></td>
+            <td>2 / week<br><strong>1350 LE</strong></td>
+            <td>3 / week<br><strong>1500 LE</strong></td>
+            <td>4 / week<br><strong>1700 LE</strong></td>
+          </tr>
+          <tr class="highlight">
+            <td></td>
+            <td><em>Training time</em></td>
+            <td colspan="4">Group players / 45 min</td>
+          </tr>
+        </table>
+      </div>
     </div>
+
     <div class="dropdown">
       <button class="menu-btn" data-target="level2">Level 2 ▾</button>
       <div class="dropdown-panel" id="level2">Test prices for Level 2</div>
     </div>
+
     <div class="dropdown">
       <button class="menu-btn" data-target="level3">Level 3 ▾</button>
       <div class="dropdown-panel" id="level3">Test prices for Level 3</div>
     </div>
+
     <div class="dropdown">
       <button class="menu-btn" data-target="adult">Adult ▾</button>
       <div class="dropdown-panel" id="adult">Test prices for Adult</div>
     </div>
+
     <div class="dropdown">
       <button class="menu-btn" data-target="private">Private Trainer ▾</button>
       <div class="dropdown-panel" id="private">Test prices for Private Trainer</div>
@@ -85,17 +131,14 @@
         const panel = document.getElementById(id);
         if (!panel) return;
 
-        // close others
         document.querySelectorAll('.dropdown-panel').forEach(p => {
           if (p !== panel) p.classList.remove('show');
         });
 
-        // toggle this one
         panel.classList.toggle('show');
         return;
       }
 
-      // click outside closes all
       if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown-panel').forEach(p => p.classList.remove('show'));
       }
