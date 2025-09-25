@@ -23,6 +23,7 @@
   <p>This is our official website hosted on GitHub Pages.</p>
 </body>
 </html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,6 @@
     /* Navigation bar */
     .navbar {
       background: #007bff;
-      overflow: hidden;
       display: flex;
       justify-content: center;
     }
@@ -66,14 +66,16 @@
     .dropdown-content {
       display: none;
       position: absolute;
+      top: 100%;
+      left: 0;
       background: white;
-      min-width: 220px;
+      min-width: 240px;
       box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
       padding: 10px;
       z-index: 1;
     }
 
-    /* Grid for prices */
+    /* Grid for prices (forces 2 columns) */
     .price-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -82,9 +84,10 @@
 
     .price-item {
       background: #f1f1f1;
-      padding: 8px;
+      padding: 10px;
       border-radius: 5px;
       text-align: center;
+      font-size: 14px;
     }
 
     /* Show dropdown on click */
@@ -106,6 +109,7 @@
         </div>
       </div>
     </div>
+
     <div class="dropdown">
       <a href="#">Level 2</a>
     </div>
