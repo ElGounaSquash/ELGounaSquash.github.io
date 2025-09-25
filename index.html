@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('background') no-repeat center center fixed; /* 👈 change to 'background.jpg' if needed */
+      background: url('background') no-repeat center center fixed; /* 👈 make sure the file name matches */
       background-size: cover;
       min-height: 100vh;
       color: #fff;
@@ -46,7 +46,7 @@
       color: #000;
       padding: 10px;
       border-radius: 6px;
-      min-width: 250px;
+      min-width: 320px;
       z-index: 100;
     }
 
@@ -77,7 +77,7 @@
       }
       .dropdown-panel {
         position: static;
-        width: 90%;
+        width: 95%;
         margin-top: 5px;
       }
     }
@@ -90,9 +90,11 @@
       <button class="menu-btn" data-target="level1">Level 1 ▾</button>
       <div class="dropdown-panel" id="level1">
         <table>
-          <tr><th>Sessions</th><th>Price</th></tr>
-          <tr><td>1 per week</td><td>1000 LE</td></tr>
-          <tr><td>2 per week</td><td>1350 LE</td></tr>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1000</td><td>Group players / 45 min</td></tr>
+          <tr><td>2 per week</td><td>1350</td><td>Group players / 45 min</td></tr>
+          <tr><td>3 per week</td><td>1500</td><td>Group players / 45 min</td></tr>
+          <tr><td>4 per week</td><td>1700</td><td>Group players / 45 min</td></tr>
         </table>
       </div>
     </div>
@@ -102,9 +104,11 @@
       <button class="menu-btn" data-target="level2">Level 2 ▾</button>
       <div class="dropdown-panel" id="level2">
         <table>
-          <tr><th>Sessions</th><th>Price</th></tr>
-          <tr><td>1 per week</td><td>1200 LE</td></tr>
-          <tr><td>2 per week</td><td>1600 LE</td></tr>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1200</td><td>Group players / 45 min</td></tr>
+          <tr><td>2 per week</td><td>1500</td><td>Group players / 45 min</td></tr>
+          <tr><td>3 per week</td><td>1750</td><td>Group players / 45 min</td></tr>
+          <tr><td>4 per week</td><td>2000</td><td>Group players / 45 min</td></tr>
         </table>
       </div>
     </div>
@@ -114,9 +118,11 @@
       <button class="menu-btn" data-target="level3">Level 3 ▾</button>
       <div class="dropdown-panel" id="level3">
         <table>
-          <tr><th>Sessions</th><th>Price</th></tr>
-          <tr><td>1 per week</td><td>1400 LE</td></tr>
-          <tr><td>2 per week</td><td>1800 LE</td></tr>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1400</td><td>(2 players) / 1 hour</td></tr>
+          <tr><td>2 per week</td><td>2000</td><td>(2 players) / 1 hour</td></tr>
+          <tr><td>3 per week</td><td>2400</td><td>(2 players) / 1 hour</td></tr>
+          <tr><td>4 per week</td><td>2700</td><td>(2 players) / 1 hour</td></tr>
         </table>
       </div>
     </div>
@@ -126,8 +132,11 @@
       <button class="menu-btn" data-target="adult">Adult ▾</button>
       <div class="dropdown-panel" id="adult">
         <table>
-          <tr><th>Players</th><th>Price</th></tr>
-          <tr><td>2 players / 1 hour</td><td>400 LE</td></tr>
+          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
+          <tr><td>1 per week</td><td>1500</td><td>(2 players) / 45 min</td></tr>
+          <tr><td>2 per week</td><td>1800</td><td>(2 players) / 45 min</td></tr>
+          <tr><td>3 per week</td><td>2250</td><td>(2 players) / 45 min</td></tr>
+          <tr><td>4 per week</td><td>2500</td><td>(2 players) / 45 min</td></tr>
         </table>
       </div>
     </div>
@@ -137,9 +146,8 @@
       <button class="menu-btn" data-target="private">Private Trainer ▾</button>
       <div class="dropdown-panel" id="private">
         <table>
-          <tr><th>Sessions</th><th>Price</th></tr>
-          <tr><td>1 hour</td><td>500 LE</td></tr>
-          <tr><td>10 hours</td><td>4500 LE</td></tr>
+          <tr><th>Package</th><th>Details</th></tr>
+          <tr><td>One time</td><td>400 LE / 1 hour</td></tr>
         </table>
       </div>
     </div>
