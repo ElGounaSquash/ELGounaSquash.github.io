@@ -1,286 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>El Gouna Squash — Programs & Prices</title>
-  <style>
-    :root{
-      --nav-bg: rgba(0,0,0,0.60);
-      --accent:#dca8a8;
-      --highlight: #f6c23e;
-      --card: #007bff;
-      --card-contrast: #fff;
-    }
+<!-- Example Dropdown for Level 1 -->
+<div class="dropdown">
+  <button class="dropbtn">Level 1</button>
+  <div class="dropdown-content">
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; border-collapse:collapse; font-family:Arial, sans-serif; font-size:15px;">
+      <thead style="background:#f2c6c6; font-weight:bold;">
+        <tr>
+          <th>Per Week</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1000</td><td>Group / 45min</td></tr>
+        <tr style="background:#fdf4d7;"><td>2</td><td>1350</td><td>Group / 45min</td></tr>
+        <tr><td>3</td><td>1500</td><td>Group / 45min</td></tr>
+        <tr style="background:#fdf4d7;"><td>4</td><td>1700</td><td>Group / 45min</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-    /* Background (keep your uploaded image name here) */
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      -webkit-font-smoothing:antialiased;
-    }
+<!-- Example Dropdown for Level 2 -->
+<div class="dropdown">
+  <button class="dropbtn">Level 2</button>
+  <div class="dropdown-content">
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; border-collapse:collapse; font-family:Arial, sans-serif; font-size:15px;">
+      <thead style="background:#f2c6c6; font-weight:bold;">
+        <tr>
+          <th>Per Week</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1200</td><td>Group / 45min</td></tr>
+        <tr style="background:#fdf4d7;"><td>2</td><td>1500</td><td>Group / 45min</td></tr>
+        <tr><td>3</td><td>1750</td><td>Group / 45min</td></tr>
+        <tr style="background:#fdf4d7;"><td>4</td><td>2000</td><td>Group / 45min</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-    /* subtle overlay so text reads over the photo */
-    .overlay { position:fixed; inset:0; background: rgba(0,0,0,0.22); z-index:0; pointer-events:none; }
+<!-- Example Dropdown for Level 3 -->
+<div class="dropdown">
+  <button class="dropbtn">Level 3</button>
+  <div class="dropdown-content">
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; border-collapse:collapse; font-family:Arial, sans-serif; font-size:15px;">
+      <thead style="background:#f2c6c6; font-weight:bold;">
+        <tr>
+          <th>Per Week</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1400</td><td>2 Players / 1h</td></tr>
+        <tr style="background:#fdf4d7;"><td>2</td><td>2000</td><td>2 Players / 1h</td></tr>
+        <tr><td>3</td><td>2400</td><td>2 Players / 1h</td></tr>
+        <tr style="background:#fdf4d7;"><td>4</td><td>2700</td><td>2 Players / 1h</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-    header {
-      text-align:center;
-      padding:36px 12px;
-      position:relative;
-      z-index:10;
-    }
-    header h1 { margin:0; color:var(--card); font-size:32px; }
-    header p { margin:8px 0 0; color:#fff; opacity:0.95; }
+<!-- Example Dropdown for Adult -->
+<div class="dropdown">
+  <button class="dropbtn">Adult</button>
+  <div class="dropdown-content">
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; border-collapse:collapse; font-family:Arial, sans-serif; font-size:15px;">
+      <thead style="background:#f2c6c6; font-weight:bold;">
+        <tr>
+          <th>Per Week</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1500</td><td>2 Players / 45min</td></tr>
+        <tr style="background:#fdf4d7;"><td>2</td><td>1800</td><td>2 Players / 45min</td></tr>
+        <tr><td>3</td><td>2250</td><td>2 Players / 45min</td></tr>
+        <tr style="background:#fdf4d7;"><td>4</td><td>2500</td><td>1 Player / 45min</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-    /* navbar */
-    .navbar {
-      position:relative;
-      z-index:10;
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      padding:12px;
-      background: var(--nav-bg);
-      flex-wrap:wrap;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
-
-    .menu-btn {
-      -webkit-appearance:none;
-      appearance:none;
-      border:0;
-      background:transparent;
-      color:#fff;
-      padding:10px 14px;
-      font-size:16px;
-      cursor:pointer;
-      border-radius:8px;
-    }
-    .menu-btn:hover, .menu-btn:focus {
-      background: rgba(255,255,255,0.06);
-      outline:none;
-    }
-
-    .dropdown { position:relative; display:inline-block; }
-
-    /* dropdown panel centered under its button */
-    .dropdown-panel {
-      display:none;
-      position:absolute;
-      top: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(255,255,255,0.98);
-      color:#111;
-      border-radius:10px;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.35);
-      padding:12px;
-      z-index:20;
-      min-width:560px;
-      max-width: calc(100vw - 24px);
-    }
-    .dropdown-panel.show { display:block; animation: fadeIn .12s ease; }
-    @keyframes fadeIn { from { opacity:0; transform: translateX(-50%) translateY(-6px) } to { opacity:1; transform: translateX(-50%) translateY(0) } }
-
-    /* table inside panel */
-    table { width:100%; border-collapse:collapse; font-size:14px; }
-    th, td { border:1px solid #bfbfbf; padding:8px; text-align:center; vertical-align:middle; }
-    th { background: var(--accent); font-weight:700; }
-    .highlight { background: var(--highlight); font-weight:700; }
-
-    /* responsive: smaller screens */
-    @media (max-width:640px){
-      .dropdown-panel { left:8px; transform:none; min-width:220px; }
-      th, td { font-size:13px; padding:6px; }
-    }
-
-    /* small centered box for private trainer when opened */
-    .private-box { text-align:center; padding:12px; background:#fff; color:#111; border-radius:8px; font-weight:700; }
-  </style>
-</head>
-<body>
-  <div class="overlay" aria-hidden="true"></div>
-
-  <header>
-    <h1>El Gouna Squash</h1>
-    <p>Click a program button to view prices and training time</p>
-  </header>
-
-  <nav class="navbar" aria-label="Programs menu">
-    <!-- Level 1 -->
-    <div class="dropdown">
-      <button class="menu-btn" type="button" data-target="p-level1" aria-expanded="false">Level 1 ▾</button>
-      <div class="dropdown-panel" id="p-level1" aria-hidden="true">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>programs</th>
-            <th colspan="4">n of training</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td><strong>level1</strong></td>
-            <td>1 per a week<br><strong>1000</strong></td>
-            <td>2 per a week<br><strong>1350</strong></td>
-            <td>3 per a week<br><strong>1500</strong></td>
-            <td>4 per a week<br><strong>1700</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>training time</em></td>
-            <td colspan="4">group players / 45 min</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Level 2 -->
-    <div class="dropdown">
-      <button class="menu-btn" type="button" data-target="p-level2" aria-expanded="false">Level 2 ▾</button>
-      <div class="dropdown-panel" id="p-level2" aria-hidden="true">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>programs</th>
-            <th colspan="4">n of training</th>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><strong>level2</strong></td>
-            <td>1 per a week<br><strong>1200</strong></td>
-            <td>2 per a week<br><strong>1500</strong></td>
-            <td>3 per a week<br><strong>1750</strong></td>
-            <td>4 per a week<br><strong>2000</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>training time</em></td>
-            <td colspan="4">group players / 45 min</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Level 3 -->
-    <div class="dropdown">
-      <button class="menu-btn" type="button" data-target="p-level3" aria-expanded="false">Level 3 ▾</button>
-      <div class="dropdown-panel" id="p-level3" aria-hidden="true">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>programs</th>
-            <th colspan="4">n of training</th>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><strong>level3</strong></td>
-            <td>1 per a week<br><strong>1400</strong></td>
-            <td>2 per a week<br><strong>2000</strong></td>
-            <td>3 per a week<br><strong>2400</strong></td>
-            <td>4 per a week<br><strong>2700</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>training time</em></td>
-            <td colspan="4">(2 players) / 1 hour</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Adult -->
-    <div class="dropdown">
-      <button class="menu-btn" type="button" data-target="p-adult" aria-expanded="false">Adult ▾</button>
-      <div class="dropdown-panel" id="p-adult" aria-hidden="true">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>programs</th>
-            <th colspan="4">n of training</th>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td><strong>adult</strong></td>
-            <td>1 per a week<br><strong>1500</strong></td>
-            <td>2 per a week<br><strong>1800</strong></td>
-            <td>3 per a week<br><strong>2250</strong></td>
-            <td>4 per a week<br><strong>2500</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>training time</em></td>
-            <td colspan="4">(2 players) 45 min / (1 player) 45 min</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Private Trainer (5th button) -->
-    <div class="dropdown">
-      <button class="menu-btn" type="button" data-target="p-private" aria-expanded="false">Private Trainer ▾</button>
-      <div class="dropdown-panel" id="p-private" aria-hidden="true" style="min-width:280px;">
-        <div class="private-box">
-          <div>Private trainer</div>
-          <div style="margin-top:8px; font-size:20px">400 LE</div>
-          <div style="font-size:13px; margin-top:6px">one time — 1 hour</div>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <script>
-    // Click-to-toggle dropdown panels. Only one open at a time.
-    document.addEventListener('click', function(e){
-      const btn = e.target.closest('.menu-btn');
-      if (btn) {
-        const id = btn.dataset.target;
-        const panel = document.getElementById(id);
-        if (!panel) return;
-
-        // close other panels
-        document.querySelectorAll('.dropdown-panel.show').forEach(p => {
-          if (p !== panel) {
-            p.classList.remove('show');
-            p.setAttribute('aria-hidden','true');
-            const otherBtn = document.querySelector('[data-target="'+p.id+'"]');
-            if (otherBtn) otherBtn.setAttribute('aria-expanded','false');
-          }
-        });
-
-        // toggle this panel
-        const willShow = !panel.classList.contains('show');
-        if (willShow) {
-          panel.classList.add('show');
-          panel.setAttribute('aria-hidden','false');
-          btn.setAttribute('aria-expanded','true');
-        } else {
-          panel.classList.remove('show');
-          panel.setAttribute('aria-hidden','true');
-          btn.setAttribute('aria-expanded','false');
-        }
-        return;
-      }
-
-      // click outside dropdowns -> close all
-      if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-panel.show').forEach(p => p.classList.remove('show'), p.setAttribute('aria-hidden','true'));
-        document.querySelectorAll('.menu-btn').forEach(b => b.setAttribute('aria-expanded','false'));
-      }
-    });
-
-    // Close panels with Escape
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.dropdown-panel.show').forEach(p => p.classList.remove('show'), p.setAttribute('aria-hidden','true'));
-        document.querySelectorAll('.menu-btn').forEach(b => b.setAttribute('aria-expanded','false'));
-      }
-    });
-
-    // Prevent accidental form submission if user presses Enter while focused on a button
-    document.querySelectorAll('.menu-btn').forEach(b => b.type = 'button');
-  </script>
-</body>
-</html>
+<!-- Example Dropdown for Private Trainer -->
+<div class="dropdown">
+  <button class="dropbtn">Private Trainer</button>
+  <div class="dropdown-content">
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; border-collapse:collapse; font-family:Arial, sans-serif; font-size:15px;">
+      <thead style="background:#f2c6c6; font-weight:bold;">
+        <tr>
+          <th>Plan</th>
+          <th>Price</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>One Time</td><td>400</td><td>Single Session</td></tr>
+        <tr style="background:#fdf4d7;"><td>1 Hour</td><td>Special Rate</td><td>Private Full Hour</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
