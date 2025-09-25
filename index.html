@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>El Gouna Squash</title>
+  <title>Test El Gouna Squash</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;      /* responsive background */
+      background-size: cover;
       min-height: 100vh;
       color: #fff;
     }
@@ -20,7 +20,6 @@
       gap: 10px;
       padding: 12px;
       background: rgba(0,0,0,0.6);
-      flex-wrap: wrap;
     }
 
     .dropdown {
@@ -45,164 +44,30 @@
       color: #000;
       padding: 10px;
       border-radius: 6px;
-      min-width: 300px;
+      min-width: 200px;
       z-index: 100;
-      overflow-x: auto;   /* makes tables scrollable on mobile */
     }
 
     .dropdown-panel.show {
       display: block;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 8px;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 6px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    th {
-      background: #eee;
-    }
-
-    .highlight {
-      background: #f6c23e;
-      font-weight: bold;
-    }
-
-    .private-box {
-      text-align: center;
-      padding: 12px;
-      background: #fff;
-      border-radius: 6px;
-    }
   </style>
 </head>
 <body>
   <nav class="navbar">
-    <!-- Level 1 -->
     <div class="dropdown">
       <button class="menu-btn" data-target="level1">Level 1 ▾</button>
       <div class="dropdown-panel" id="level1">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>Programs</th>
-            <th colspan="4">Training / Week</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td><strong>Level 1</strong></td>
-            <td>1 / week<br><strong>1000 LE</strong></td>
-            <td>2 / week<br><strong>1350 LE</strong></td>
-            <td>3 / week<br><strong>1500 LE</strong></td>
-            <td>4 / week<br><strong>1700 LE</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>Training time</em></td>
-            <td colspan="4">Group players / 45 min</td>
-          </tr>
-        </table>
+        <p>Test Prices: 1/week = 1000 LE</p>
+        <p>2/week = 1350 LE</p>
       </div>
     </div>
 
-    <!-- Level 2 -->
     <div class="dropdown">
       <button class="menu-btn" data-target="level2">Level 2 ▾</button>
       <div class="dropdown-panel" id="level2">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>Programs</th>
-            <th colspan="4">Training / Week</th>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><strong>Level 2</strong></td>
-            <td>1 / week<br><strong>1200 LE</strong></td>
-            <td>2 / week<br><strong>1500 LE</strong></td>
-            <td>3 / week<br><strong>1750 LE</strong></td>
-            <td>4 / week<br><strong>2000 LE</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>Training time</em></td>
-            <td colspan="4">Group players / 45 min</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Level 3 -->
-    <div class="dropdown">
-      <button class="menu-btn" data-target="level3">Level 3 ▾</button>
-      <div class="dropdown-panel" id="level3">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>Programs</th>
-            <th colspan="4">Training / Week</th>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td><strong>Level 3</strong></td>
-            <td>1 / week<br><strong>1400 LE</strong></td>
-            <td>2 / week<br><strong>2000 LE</strong></td>
-            <td>3 / week<br><strong>2400 LE</strong></td>
-            <td>4 / week<br><strong>2700 LE</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>Training time</em></td>
-            <td colspan="4">(2 players) / 1 hour</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Adult -->
-    <div class="dropdown">
-      <button class="menu-btn" data-target="adult">Adult ▾</button>
-      <div class="dropdown-panel" id="adult">
-        <table>
-          <tr>
-            <th>#</th>
-            <th>Programs</th>
-            <th colspan="4">Training / Week</th>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td><strong>Adult</strong></td>
-            <td>1 / week<br><strong>1500 LE</strong></td>
-            <td>2 / week<br><strong>1800 LE</strong></td>
-            <td>3 / week<br><strong>2250 LE</strong></td>
-            <td>4 / week<br><strong>2500 LE</strong></td>
-          </tr>
-          <tr class="highlight">
-            <td></td>
-            <td><em>Training time</em></td>
-            <td colspan="4">(2 players) 45 min / (1 player) 45 min</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <!-- Private Trainer -->
-    <div class="dropdown">
-      <button class="menu-btn" data-target="private">Private Trainer ▾</button>
-      <div class="dropdown-panel" id="private">
-        <div class="private-box">
-          <div><strong>Private Trainer</strong></div>
-          <div style="margin-top:8px; font-size:20px">400 LE</div>
-          <div style="font-size:13px; margin-top:6px">One time — 1 hour</div>
-        </div>
+        <p>Test Prices: 1/week = 1200 LE</p>
+        <p>2/week = 1500 LE</p>
       </div>
     </div>
   </nav>
@@ -215,17 +80,13 @@
         const panel = document.getElementById(id);
         if (!panel) return;
 
-        // close others
         document.querySelectorAll('.dropdown-panel').forEach(p => {
           if (p !== panel) p.classList.remove('show');
         });
 
-        // toggle this one
         panel.classList.toggle('show');
         return;
       }
-
-      // close all if clicking outside
       if (!e.target.closest('.dropdown')) {
         document.querySelectorAll('.dropdown-panel').forEach(p => p.classList.remove('show'));
       }
