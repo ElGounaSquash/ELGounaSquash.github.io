@@ -1,179 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ Mobile scaling -->
   <title>El Gouna Squash</title>
   <style>
     body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('background.jpg') no-repeat center center fixed; /* ✅ correct filename */
-    background-size: cover;
-    min-height: 100vh;
-    color: #fff;
-  }
-
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed; /* ✅ your background */
+      background-size: cover;
+      min-height: 100vh;
+      color: #fff;
     }
 
+    /* Navbar */
     .navbar {
       display: flex;
+      flex-wrap: wrap; /* ✅ makes buttons wrap on small screens */
       justify-content: center;
-      gap: 10px;
-      padding: 12px;
-      background: rgba(0,0,0,0.6);
-      flex-wrap: wrap;
+      background: rgba(0, 0, 0, 0.7);
     }
 
     .dropdown {
       position: relative;
     }
 
-    .menu-btn {
-      background: #007bff;
-      color: #fff;
+    .dropbtn {
+      background: transparent;
       border: none;
-      padding: 10px 14px;
-      border-radius: 6px;
+      color: #fff;
+      padding: 14px 20px;
       cursor: pointer;
       font-size: 16px;
+      transition: background 0.3s;
     }
 
-    .dropdown-panel {
+    .dropbtn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown-content {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      background: #fff;
-      color: #000;
+      background: rgba(0, 0, 0, 0.9);
+      min-width: 280px;
+      z-index: 1;
       padding: 10px;
-      border-radius: 6px;
-      min-width: 320px;
-      z-index: 100;
+      border-radius: 10px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    .dropdown-panel.show {
+    .dropdown:hover .dropdown-content {
       display: block;
     }
 
+    /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 14px;
     }
-    table td, table th {
-      border: 1px solid #ddd;
+
+    th, td {
+      border: 1px solid #fff;
       padding: 8px;
       text-align: center;
     }
-    table th {
-      background: #007bff;
-      color: #fff;
-      padding: 8px;
+
+    th {
+      background: rgba(255, 255, 255, 0.2);
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 600px) {
-      .navbar {
-        flex-direction: column;
-        align-items: center;
+    td {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* ✅ Responsive tables */
+    @media (max-width: 768px) {
+      table, th, td {
+        font-size: 12px;
+        padding: 6px;
       }
-      .dropdown-panel {
-        position: static;
-        width: 95%;
-        margin-top: 5px;
+      .dropdown-content {
+        min-width: 95vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      table, th, td {
+        font-size: 11px;
+      }
+      .dropbtn {
+        font-size: 14px;
+        padding: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
+  <div class="navbar">
     <!-- Level 1 -->
     <div class="dropdown">
-      <button class="menu-btn" data-target="level1">Level 1 ▾</button>
-      <div class="dropdown-panel" id="level1">
+      <button class="dropbtn">Level 1</button>
+      <div class="dropdown-content">
         <table>
-          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
-          <tr><td>1 per week</td><td>1000</td><td>Group players / 45 min</td></tr>
-          <tr><td>2 per week</td><td>1350</td><td>Group players / 45 min</td></tr>
-          <tr><td>3 per week</td><td>1500</td><td>Group players / 45 min</td></tr>
-          <tr><td>4 per week</td><td>1700</td><td>Group players / 45 min</td></tr>
+          <tr><th>Program</th><th>Price (LE)</th></tr>
+          <tr><td>1 per week</td><td>1000</td></tr>
+          <tr><td>2 per week</td><td>1350</td></tr>
+          <tr><td>3 per week</td><td>1500</td></tr>
+          <tr><td>4 per week</td><td>1700</td></tr>
         </table>
+        <p>Training time: Group players / 45 min</p>
       </div>
     </div>
 
     <!-- Level 2 -->
     <div class="dropdown">
-      <button class="menu-btn" data-target="level2">Level 2 ▾</button>
-      <div class="dropdown-panel" id="level2">
+      <button class="dropbtn">Level 2</button>
+      <div class="dropdown-content">
         <table>
-          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
-          <tr><td>1 per week</td><td>1200</td><td>Group players / 45 min</td></tr>
-          <tr><td>2 per week</td><td>1500</td><td>Group players / 45 min</td></tr>
-          <tr><td>3 per week</td><td>1750</td><td>Group players / 45 min</td></tr>
-          <tr><td>4 per week</td><td>2000</td><td>Group players / 45 min</td></tr>
+          <tr><th>Program</th><th>Price (LE)</th></tr>
+          <tr><td>1 per week</td><td>1200</td></tr>
+          <tr><td>2 per week</td><td>1500</td></tr>
+          <tr><td>3 per week</td><td>1750</td></tr>
+          <tr><td>4 per week</td><td>2000</td></tr>
         </table>
+        <p>Training time: Group players / 45 min</p>
       </div>
     </div>
 
     <!-- Level 3 -->
     <div class="dropdown">
-      <button class="menu-btn" data-target="level3">Level 3 ▾</button>
-      <div class="dropdown-panel" id="level3">
+      <button class="dropbtn">Level 3</button>
+      <div class="dropdown-content">
         <table>
-          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
-          <tr><td>1 per week</td><td>1400</td><td>(2 players) / 1 hour</td></tr>
-          <tr><td>2 per week</td><td>2000</td><td>(2 players) / 1 hour</td></tr>
-          <tr><td>3 per week</td><td>2400</td><td>(2 players) / 1 hour</td></tr>
-          <tr><td>4 per week</td><td>2700</td><td>(2 players) / 1 hour</td></tr>
+          <tr><th>Program</th><th>Price (LE)</th></tr>
+          <tr><td>1 per week</td><td>1400</td></tr>
+          <tr><td>2 per week</td><td>2000</td></tr>
+          <tr><td>3 per week</td><td>2400</td></tr>
+          <tr><td>4 per week</td><td>2700</td></tr>
         </table>
+        <p>Training time: (2 players) / 1 hour</p>
       </div>
     </div>
 
     <!-- Adult -->
     <div class="dropdown">
-      <button class="menu-btn" data-target="adult">Adult ▾</button>
-      <div class="dropdown-panel" id="adult">
+      <button class="dropbtn">Adult</button>
+      <div class="dropdown-content">
         <table>
-          <tr><th>Sessions</th><th>Price (LE)</th><th>Training Time</th></tr>
-          <tr><td>1 per week</td><td>1500</td><td>(2 players) / 45 min</td></tr>
-          <tr><td>2 per week</td><td>1800</td><td>(2 players) / 45 min</td></tr>
-          <tr><td>3 per week</td><td>2250</td><td>(2 players) / 45 min</td></tr>
-          <tr><td>4 per week</td><td>2500</td><td>(2 players) / 45 min</td></tr>
+          <tr><th>Program</th><th>Price (LE)</th></tr>
+          <tr><td>1 per week</td><td>1500</td></tr>
+          <tr><td>2 per week</td><td>1800</td></tr>
+          <tr><td>3 per week</td><td>2250</td></tr>
+          <tr><td>4 per week</td><td>2500</td></tr>
         </table>
+        <p>Training time: (2 players) / 45 min</p>
       </div>
     </div>
 
     <!-- Private Trainer -->
     <div class="dropdown">
-      <button class="menu-btn" data-target="private">Private Trainer ▾</button>
-      <div class="dropdown-panel" id="private">
+      <button class="dropbtn">Private Trainer</button>
+      <div class="dropdown-content">
         <table>
-          <tr><th>Package</th><th>Details</th></tr>
-          <tr><td>One time</td><td>400 LE / 1 hour</td></tr>
+          <tr><th>Session</th><th>Price (LE)</th></tr>
+          <tr><td>One time (1 hour)</td><td>400</td></tr>
         </table>
       </div>
     </div>
-  </nav>
-
-  <script>
-    document.addEventListener('click', function(e) {
-      const btn = e.target.closest('.menu-btn');
-      if (btn) {
-        const id = btn.dataset.target;
-        const panel = document.getElementById(id);
-        if (!panel) return;
-
-        document.querySelectorAll('.dropdown-panel').forEach(p => {
-          if (p !== panel) p.classList.remove('show');
-        });
-
-        panel.classList.toggle('show');
-        return;
-      }
-      if (!e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown-panel').forEach(p => p.classList.remove('show'));
-      }
-    });
-  </script>
+  </div>
 </body>
 </html>
