@@ -9,7 +9,8 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-size: cover;      /* responsive background */
+      min-height: 100vh;
       color: #fff;
     }
 
@@ -46,6 +47,7 @@
       border-radius: 6px;
       min-width: 300px;
       z-index: 100;
+      overflow-x: auto;   /* makes tables scrollable on mobile */
     }
 
     .dropdown-panel.show {
@@ -62,6 +64,7 @@
       border: 1px solid #ccc;
       padding: 6px;
       text-align: center;
+      font-size: 14px;
     }
 
     th {
